@@ -1,5 +1,4 @@
 @startuml system-design
-
 actor "User" as user
 node "Bike-rent-backend node.js API" {
     component "Controller" as controller

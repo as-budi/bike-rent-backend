@@ -16,12 +16,6 @@ const Users = db.define('user',{
     refresh_token:{
         type: DataTypes.TEXT
     },
-    date_created:{
-        type: DataTypes.DATE
-    },
-    date_updated:{
-        type: DataTypes.DATE
-    },
     balance:{
         type: DataTypes.INTEGER
     }
