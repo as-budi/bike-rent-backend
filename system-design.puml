@@ -1,0 +1,16 @@
+@startuml system-design
+
+actor "User" as user
+node "Bike-rent-backend node.js API" {
+    component "Controller" as controller
+    component "Service" as service
+    component "Model" as model
+}
+database "MYSQL" as database
+
+user --> controller
+controller --> service
+service --> model
+model --> database
+
+@enduml
