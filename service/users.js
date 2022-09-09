@@ -1,4 +1,4 @@
-import Users from "../model/user_model.js";
+import { getAllUsers } from "../model/user_model.js";
 import db from "../config/db_connection.js";
 
 export const getUsers = async(req, res) => {
@@ -12,7 +12,7 @@ export const getUsers = async(req, res) => {
     }
 }
 
-export const getAllUsers = async(req, res) => {
+export const gau = async(req, res) => {
     const sql_query = "SELECT * FROM user";
 
     const [result, metadata] = await db.query(sql_query);
