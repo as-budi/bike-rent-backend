@@ -1,8 +1,17 @@
-import {Sequelize} from "sequelize";
+import mysql from "mysql2";
 
-const db = new Sequelize('bike_rent_db','root','root',{
-    host: "localhost",
-    dialect: "mysql"
+const HOST = "localhost";
+const USER = "root";
+const PASSWORD = "root";
+const DATABASE = "bike_rent_db";
+const PORT = 3306;
+
+const db = mysql.createPool({
+    host: HOST,
+    port: PORT,
+    user: USER,
+    password: PASSWORD,
+    database: DATABASE
 });
 
 export default db;
