@@ -31,8 +31,15 @@ entity parking_lot {
     * id
     --
     status
-    lock_at
-    unlock_at
+}
+
+entity lot_history {
+     *id
+     --
+     lot_id
+     status
+     time
+     user_id
 }
 
 entity transaction {
@@ -44,7 +51,7 @@ entity transaction {
 }
 
 entity deposit {
-    * id
+    transaction_id
     --
     user_id
 }
@@ -58,9 +65,11 @@ entity payment {
 bike ||--|| parking_lot
 transaction }|--|{ deposit
 deposit }|--|| user
-transaction }|--|{ payment
+transaction ||--|| payment
 rent }|--|| user
 payment ||--|| rent
 rent ||--|{ bike
+parking_lot ||--|{ lot_history
+user ||--|{ lot_history
 
 @enduml
