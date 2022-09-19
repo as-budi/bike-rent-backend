@@ -1,17 +1,21 @@
 import db from "../config/db_connection.js";
 
-export const getAllUsers = async(req, res) => {
+export const getAllUsers = async() => {
      const sql_query = "SELECT * FROM user";
+     let respond = "";
 
-    db.query(sql_query, (err, result) => {
-        if(err) {
-            console.log(err)
-        }
-        else {
-            res.send(result);
-            console.log(result);
-        }
-    })
+     db.query(sql_query, (err, result) => {
+          if(err) {
+               respond = err;
+          }
+          else {
+               //console.log(result);
+               respond = result;
+          }
+          // console.log(respond);
+     })
+     console.log(respond);
+     return respond;
  }
 // const { DataTypes } = Sequelize;
 

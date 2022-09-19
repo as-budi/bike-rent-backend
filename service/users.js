@@ -1,4 +1,4 @@
-import { getAllUsers } from "../model/user_model.js";
+import { getAllUsers } from "../model/data_model.js";
 import db from "../config/db_connection.js";
 
 export const getUsers = async(req, res) => {
@@ -12,13 +12,8 @@ export const getUsers = async(req, res) => {
     }
 }
 
-export const gau = async(req, res) => {
-    const sql_query = "SELECT * FROM user";
-
-    const [result, metadata] = await db.query(sql_query);
-    res.send(result);
-    console.log(metadata);
-    console.log(result);
+export const gau = (req, res) => {
+     res.send(getAllUsers())
 }
 
 export const getUsersByEmail = async(req, res) => {

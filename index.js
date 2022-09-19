@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import db from "./config/db_connection.js";
+import router from "./controller/controller.js";
 
 
 const app = express();
@@ -25,9 +26,9 @@ db.query(sql_query, (err, result) => {
 //     console.error(error);
 // }
 
-app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
-// app.use(router);
+app.use(router);
 
 app.listen(3001, ()=> console.log('Server running at port 3001...'));
