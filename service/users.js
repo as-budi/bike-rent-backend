@@ -13,6 +13,7 @@ export const getUsers = async(req, res) => {
 }
 
 export const gau = (req, res) => {
+    console.log(req);
      let data = getAllUsers()
      res.send(data);
 }

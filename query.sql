@@ -1,4 +1,4 @@
--- Active: 1661842809560@@127.0.0.1@3306@bike_rent_db
+-- Active: 1666075174778@@127.0.0.1@3306@bike_rent_db
 
 CREATE DATABASE bike_rent_db;
 
